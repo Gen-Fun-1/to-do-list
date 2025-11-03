@@ -1,23 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List Privacy Policy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>To-Do List — Privacy Policy</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
+        :root{
+          --bg:#ffffff;
+          --text:#0b1220;
+          --muted:#6b7280;
+          --accent:#0ea5a4;
+          font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
         }
-        h1, h2 {
-            color: #333;
+        html,body{height:100%;margin:0;background:var(--bg);color:var(--text);}
+        .container{
+          max-width:900px;
+          margin:32px auto;
+          padding:20px;
+          box-sizing:border-box;
+          line-height:1.6;
+        }
+        h1{margin:0 0 6px;font-size:1.25rem;color:var(--accent)}
+        h2{font-size:1rem;margin:18px 0 8px}
+        p{margin:8px 0;color:var(--text)}
+        .meta{color:var(--muted);font-size:.9rem;margin-bottom:0}
+        ul{margin:8px 0 8px 20px}
+        a{color:var(--accent);text-decoration:none}
+        @media (max-width:600px){
+          .container{padding:16px;margin:18px}
+          h1{font-size:1.1rem}
+        }
+
+        /* header: small image left, title/meta right */
+        .top{
+          display:flex;
+          align-items:center;
+          gap:12px;
+          margin-bottom:12px;
+        }
+        .head-text{display:flex;flex-direction:column;gap:6px;min-width:0;}
+        .head-text h1{margin:0; font-size:1.25rem; color:var(--accent); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+        .hero{
+          display:block;
+          width:clamp(48px, 10vw, 96px);
+          height:auto;
+          margin:0;
+          border-radius:12px;
+          object-fit:cover;
+          box-shadow:0 6px 18px rgba(14,165,164,0.08);
+          border:1px solid rgba(6,7,8,0.04);
+          flex:0 0 auto;
+        }
+
+        @media (max-width:600px){
+          .top{flex-direction:row;align-items:center;gap:10px;}
+        }
+        @media (max-width:420px){
+          .top{flex-direction:column;align-items:flex-start;gap:10px;}
+          .hero{width:clamp(56px, 22vw, 96px);}
+          .head-text h1{font-size:1.1rem}
         }
     </style>
 </head>
 <body>
-    <h1>To-Do List Privacy Policy</h1>
-    <p><strong>Last Updated:</strong> May 24, 2025</p>
+  <main class="container" role="main" aria-labelledby="title">
+    <div class="top">
+      <!-- Replace this src with your app icon file (e.g. assets/icon.png) -->
+      <img src="assets/icon.png" alt="To-Do List app icon" class="hero" />
+      <div class="head-text">
+        <h1 id="title">To-Do List — Privacy Policy</h1>
+        <div class="meta">Last updated: May 24, 2025</div>
+      </div>
+    </div>
+
     <p>To-Do List ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your information when you use the To-Do List app ("the App"). By using the App, you agree to the practices described in this policy.</p>
 
     <h2>1. Information We Collect</h2>
@@ -69,5 +124,6 @@
 
     <h2>8. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time. The updated policy will be available within the App, and the "Last Updated" date will reflect the date of the most recent changes. We encourage you to review this policy periodically.</p>
+  </main>
 </body>
 </html>
